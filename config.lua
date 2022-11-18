@@ -1,5 +1,4 @@
 local wezterm = require 'wezterm'
-local action = wezterm.action
 
 return {
   adjust_window_size_when_changing_font_size = true,
@@ -27,11 +26,11 @@ return {
 
   cursor_thickness = '2px',
 
-  debug_key_events = true,
+  debug_key_events = false,
 
   default_cursor_style = 'SteadyBlock',
-  default_prog = { '/opt/homebrew/bin/fish', '-l' },
-  default_workspace = 'dev',
+  default_prog = { 'fish', '-l' },
+  default_workspace = 'default',
 
   detect_password_input = true,
 
@@ -58,85 +57,9 @@ return {
     brightness = 0.8,
   },
 
-  key_tables = {
-    -- Defines the keys that are active in our resize-pane mode.
-    -- Since we're likely to want to make multiple adjustments,
-    -- we made the activation one_shot=false. We therefore need
-    -- to define a key assignment for getting out of this mode.
-    -- 'resize_pane' here corresponds to the name="resize_pane" in
-    -- the key assignments above.
-    resize_pane = {
-      { key = 'LeftArrow', action = action.AdjustPaneSize { 'Left', 1 } },
-      { key = 'h', action = action.AdjustPaneSize { 'Left', 1 } },
-
-      { key = 'RightArrow', action = action.AdjustPaneSize { 'Right', 1 } },
-      { key = 'l', action = action.AdjustPaneSize { 'Right', 1 } },
-
-      { key = 'UpArrow', action = action.AdjustPaneSize { 'Up', 1 } },
-      { key = 'k', action = action.AdjustPaneSize { 'Up', 1 } },
-
-      { key = 'DownArrow', action = action.AdjustPaneSize { 'Down', 1 } },
-      { key = 'j', action = action.AdjustPaneSize { 'Down', 1 } },
-
-      -- Cancel the mode by pressing escape
-      { key = 'Escape', action = 'PopKeyTable' },
-    },
-
-    -- Defines the keys that are active in our activate-pane mode.
-    -- 'activate_pane' here corresponds to the name="activate_pane" in
-    -- the key assignments above.
-    activate_pane = {
-      { key = 'LeftArrow', action = action.ActivatePaneDirection 'Left' },
-      { key = 'h', action = action.ActivatePaneDirection 'Left' },
-
-      { key = 'RightArrow', action = action.ActivatePaneDirection 'Right' },
-      { key = 'l', action = action.ActivatePaneDirection 'Right' },
-
-      { key = 'UpArrow', action = action.ActivatePaneDirection 'Up' },
-      { key = 'k', action = action.ActivatePaneDirection 'Up' },
-
-      { key = 'DownArrow', action = action.ActivatePaneDirection 'Down' },
-      { key = 'j', action = action.ActivatePaneDirection 'Down' },
-    },
-  },
-  keys = {
-    -- CTRL+SHIFT+Space, followed by 'r' will put us in resize-pane
-    -- mode until we cancel that mode.
-    {
-      key = 'r',
-      mods = 'LEADER',
-      action = action.ActivateKeyTable {
-        name = 'resize_pane',
-        one_shot = false,
-      },
-    },
-
-    -- CTRL+SHIFT+Space, followed by 'a' will put us in activate-pane
-    -- mode until we press some other key or until 1 second (1000ms)
-    -- of time elapses
-    {
-      key = 'a',
-      mods = 'LEADER',
-      action = action.ActivateKeyTable {
-        name = 'activate_pane',
-        timeout_milliseconds = 1000,
-      },
-    },
-
-    {
-      key = 'E',
-      mods = 'CTRL',
-      action = action.EmitEvent 'trigger-vim-with-visible-text',
-    },
-
-    {
-      key = 'g',
-      mods = 'META',
-      action = wezterm.action_callback(function(window, pane)
-        wezterm.open_with 'https://github.com/dpjungmin'
-      end),
-    },
-  },
+  leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 2000 },
+  key_tables = require 'key_tables',
+  keys = require 'keys',
 
   launch_menu = {
     {
@@ -148,6 +71,7 @@ return {
   line_height = 1.0,
 
   max_fps = 60,
+  mouse_bindings = require 'mouse_bindings',
 
   pane_focus_follows_mouse = true,
 
@@ -156,7 +80,7 @@ return {
   scrollback_lines = 10000,
 
   set_environment_variables = {
-    SHELL = '/opt/homebrew/bin/fish',
+    PATH = '/opt/homebrew/bin:$PATH',
   },
 
   show_tab_index_in_tab_bar = true,
