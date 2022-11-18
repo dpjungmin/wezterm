@@ -34,7 +34,7 @@ return {
 
   detect_password_input = true,
 
-  enable_scroll_bar = true,
+  enable_scroll_bar = false,
   enable_tab_bar = true,
   enable_wayland = true,
 
@@ -94,7 +94,7 @@ return {
   tab_bar_at_bottom = true,
   tab_max_width = 15,
 
-  text_background_opacity = 0.5,
+  text_background_opacity = 1.0,
 
   underline_thickness = '2px',
 

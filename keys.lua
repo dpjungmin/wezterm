@@ -34,7 +34,7 @@ return {
   },
 
   -- weztern actions
-  { key = 'b', mods = 'CTRL', action = action.RotatePanes 'CounterClockwise' },
+  { key = 'N', mods = 'CTRL', action = action.RotatePanes 'CounterClockwise' },
   { key = 'n', mods = 'CTRL', action = action.RotatePanes 'Clockwise' },
   { key = 'l', mods = 'CTRL', action = action.ShowDebugOverlay },
   { key = 'z', mods = 'CTRL', action = action.TogglePaneZoomState },
@@ -70,15 +70,15 @@ return {
   },
 
   -- ex) multiple keys from one key
-  {
-    key = 'LeftArrow',
-    action = action.Multiple {
-      action.SendKey { key = 'l' },
-      action.SendKey { key = 'e' },
-      action.SendKey { key = 'f' },
-      action.SendKey { key = 't' },
-    },
-  },
+  -- {
+  --   key = 'LeftArrow',
+  --   action = action.Multiple {
+  --     action.SendKey { key = 'l' },
+  --     action.SendKey { key = 'e' },
+  --     action.SendKey { key = 'f' },
+  --     action.SendKey { key = 't' },
+  --   },
+  -- },
 
   -- ex) CMD-y starts `top` in a new tab
   {
