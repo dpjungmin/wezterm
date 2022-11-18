@@ -32,6 +32,20 @@ return {
       wezterm.open_with 'https://github.com/dpjungmin'
     end),
   },
+  {
+    key = 'd',
+    mods = 'META',
+    action = wezterm.action_callback(function(window, pane)
+      wezterm.open_with 'https://docs.rs'
+    end),
+  },
+  {
+    key = 'r',
+    mods = 'META',
+    action = wezterm.action_callback(function(window, pane)
+      wezterm.open_with 'https://doc.rust-lang.org/std'
+    end),
+  },
 
   -- weztern actions
   { key = 'l', mods = 'CTRL', action = action.ShowDebugOverlay },
