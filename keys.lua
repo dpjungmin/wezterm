@@ -34,11 +34,11 @@ return {
   },
 
   -- weztern actions
-  { key = 'N', mods = 'CTRL', action = action.RotatePanes 'CounterClockwise' },
-  { key = 'n', mods = 'CTRL', action = action.RotatePanes 'Clockwise' },
   { key = 'l', mods = 'CTRL', action = action.ShowDebugOverlay },
   { key = 'z', mods = 'CTRL', action = action.TogglePaneZoomState },
 
+  { key = 'N', mods = 'META', action = action.RotatePanes 'CounterClockwise' },
+  { key = 'n', mods = 'META', action = action.RotatePanes 'Clockwise' },
   { key = 'f', mods = 'META', action = action.ToggleFullScreen },
   { key = 'l', mods = 'META', action = action.ShowLauncher },
 
