@@ -48,7 +48,7 @@ return {
   },
 
   -- weztern actions
-  { key = 'l', mods = 'CTRL', action = action.ShowDebugOverlay },
+  { key = '/', mods = 'CTRL', action = action.ShowDebugOverlay },
   { key = 'z', mods = 'CTRL', action = action.TogglePaneZoomState },
 
   { key = 'N', mods = 'META', action = action.RotatePanes 'CounterClockwise' },
