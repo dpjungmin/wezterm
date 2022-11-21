@@ -7,13 +7,17 @@ function M.log_info()
   wezterm.log_info('version: ' .. wezterm.version)
 end
 
-function M.merge_table(a, b)
-  for k, v in pairs(b) do
-    assert(a[k] == nil)
-    a[k] = v
+function M.merge_tables(...)
+  local table = {}
+
+  for _, t in ipairs { ... } do
+    for k, v in pairs(t) do
+      assert(table[k] == nil)
+      table[k] = v
+    end
   end
 
-  return a
+  return table
 end
 
 -- Equivalent to POSIX basename(3)
