@@ -1,4 +1,11 @@
 local wezterm = require 'wezterm'
+local hostname = wezterm.hostname()
+
+local font_size = 20.0
+
+if hostname == 'hz' then
+  font_size = 25.0
+end
 
 return {
   font = wezterm.font_with_fallback {
@@ -11,5 +18,5 @@ return {
     'JetBrains Mono',
     'DengXian',
   },
-  font_size = 20.0,
+  font_size = font_size,
 }
