@@ -5,6 +5,13 @@ local keys = require 'keys'
 local mouse_bindings = require 'mouse_bindings'
 local wezterm = require 'wezterm'
 
+local hostname = wezterm.hostname()
+local window_frame_font_size = 12.0
+
+if hostname == 'hz' then
+  window_frame_font_size = 15.0
+end
+
 local config = {
   adjust_window_size_when_changing_font_size = true,
   automatically_reload_config = true,
@@ -50,7 +57,7 @@ local config = {
   window_background_opacity = 1.0,
   window_frame = {
     font = wezterm.font { family = 'Roboto', weight = 'Bold' },
-    font_size = 12.0,
+    font_size = window_frame_font_size,
     active_titlebar_bg = '#2d302f',
     inactive_titlebar_bg = '#2d302f',
   },
