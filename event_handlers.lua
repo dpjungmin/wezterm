@@ -11,12 +11,7 @@ wezterm.on('gui-startup', function(cmd)
     args = cmd.args
   end
 
-  local tab, pane, window = mux.spawn_window {
-    workspace = 'monit',
-    args = args,
-  }
-
-  pane:send_text 'btop\n'
+  wezterm.log_info(args)
 end)
 
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
@@ -69,13 +64,9 @@ wezterm.on('update-right-status', function(window, pane)
 
   if name then
     name = 'active key table: ' .. name
-    window:set_right_status(name)
-    return
   end
 
-  local workspace = ' ' .. window:active_workspace() .. ' '
-
-  window:set_right_status(workspace)
+  window:set_right_status(name or '')
 end)
 
 wezterm.on('update-status', function(window, pane)

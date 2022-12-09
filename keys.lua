@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local action = wezterm.action
 
 return {
-  leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 2000 },
+  leader = { key = 'Space', mods = 'CMD', timeout_milliseconds = 2000 },
 
   keys = {
     -- custom key tables
@@ -51,13 +51,20 @@ return {
     },
 
     -- weztern actions
-    { key = '/', mods = 'CTRL', action = action.ShowDebugOverlay },
-    { key = 'z', mods = 'CTRL', action = action.TogglePaneZoomState },
-
+    { key = '1', mods = 'META', action = action.ActivateTab(0) },
+    { key = '2', mods = 'META', action = action.ActivateTab(1) },
+    { key = '3', mods = 'META', action = action.ActivateTab(2) },
+    { key = '4', mods = 'META', action = action.ActivateTab(3) },
+    { key = '5', mods = 'META', action = action.ActivateTab(4) },
+    { key = 'Tab', mods = 'META', action = action.ActivateTabRelative(1) },
+    { key = 'Tab', mods = 'META|SHIFT', action = action.ActivateTabRelative(-1) },
     { key = 'N', mods = 'META', action = action.RotatePanes 'CounterClockwise' },
     { key = 'n', mods = 'META', action = action.RotatePanes 'Clockwise' },
     { key = 'f', mods = 'META', action = action.ToggleFullScreen },
     { key = 'l', mods = 'META', action = action.ShowLauncher },
+
+    { key = '/', mods = 'CTRL', action = action.ShowDebugOverlay },
+    { key = 'z', mods = 'CTRL', action = action.TogglePaneZoomState },
 
     { key = 'p', mods = 'LEADER', action = action.PaneSelect { alphabet = '1234567890' } },
     {
