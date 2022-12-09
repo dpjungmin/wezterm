@@ -66,6 +66,6 @@ local config = {
   },
 }
 
-local merge = require('lib').merge_tables
+local merge = require('libw').merge_tables
 
 return merge(config, colors, fonts, key_tables, keys, mouse_bindings)

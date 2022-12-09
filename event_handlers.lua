@@ -1,4 +1,4 @@
-local lib = require 'lib'
+local lib = require 'libw'
 local wezterm = require 'wezterm'
 local action = wezterm.action
 local mux = wezterm.mux
