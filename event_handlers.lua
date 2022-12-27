@@ -1,7 +1,13 @@
-local lib = require 'libw'
 local wezterm = require 'wezterm'
 local action = wezterm.action
 local mux = wezterm.mux
+
+-- Equivalent to POSIX basename(3)
+-- Given "/foo/bar" returns "bar"
+-- Given "c:\\foo\\bar" returns "bar"
+local function basename(s)
+  return string.gsub(s, '(.*[/\\])(.*)', '%2')
+end
 
 wezterm.on('gui-startup', function(cmd)
   -- allow `wezterm start -- something`
@@ -15,7 +21,7 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
-  local title = ' ' .. lib.basename(tab.active_pane.foreground_process_name) .. ' '
+  local title = ' ' .. basename(tab.active_pane.foreground_process_name) .. ' '
 
   if tab.is_active then
     return {
@@ -95,7 +101,9 @@ end)
 -- Custom events
 
 wezterm.on('my-custom-event', function(window, pane)
-  require('lib').log_info()
+  wezterm.log_info('hostname: ' .. wezterm.hostname())
+  wezterm.log_info('target-triple: ' .. wezterm.target_triple)
+  wezterm.log_info('version: ' .. wezterm.version)
 end)
 
 wezterm.on('trigger-vim-with-visible-text', function(window, pane)

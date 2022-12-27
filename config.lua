@@ -69,6 +69,17 @@ local config = {
   },
 }
 
-local merge = require('libw').merge_tables
+local function merge_tables(...)
+  local table = {}
 
-return merge(config, colors, fonts, key_tables, keys, mouse_bindings)
+  for _, t in ipairs { ... } do
+    for k, v in pairs(t) do
+      assert(table[k] == nil)
+      table[k] = v
+    end
+  end
+
+  return table
+end
+
+return merge_tables(config, colors, fonts, key_tables, keys, mouse_bindings)
