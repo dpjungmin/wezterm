@@ -8,6 +8,7 @@ return {
 
     tab_bar = {
       inactive_tab_edge = '#575757',
+      inactive_tab_background = 'blue',
     },
   },
 }

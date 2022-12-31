@@ -17,9 +17,9 @@ local config = {
   automatically_reload_config = true,
   cell_width = 1.0,
   check_for_updates = false,
-  -- check_for_updates_interval_seconds = 86400, -- 24 hours
+  check_for_updates_interval_seconds = 86400, -- 24 hours
   clean_exit_codes = { 130 },
-  color_scheme = 'tissue',
+  color_scheme = 'Visibone Alt. 2 (terminal.sexy)', -- 'tissue'
   cursor_thickness = '2px',
   debug_key_events = false,
   default_cursor_style = 'SteadyBlock',
@@ -58,8 +58,8 @@ local config = {
   window_frame = {
     font = wezterm.font { family = 'Roboto', weight = 'Bold' },
     font_size = window_frame_font_size,
-    active_titlebar_bg = '#2d302f',
-    inactive_titlebar_bg = '#2d302f',
+    active_titlebar_bg = 'transparent',
+    inactive_titlebar_bg = 'transparent',
   },
   window_padding = {
     left = '1cell',

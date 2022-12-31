@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local action = wezterm.action
 
 return {
-  leader = { key = 'Space', mods = 'CMD', timeout_milliseconds = 2000 },
+  leader = { key = 'z', mods = 'CMD', timeout_milliseconds = 2000 },
 
   keys = {
     -- custom key tables
