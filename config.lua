@@ -19,7 +19,8 @@ local config = {
   check_for_updates = false,
   check_for_updates_interval_seconds = 86400, -- 24 hours
   clean_exit_codes = { 130 },
-  color_scheme = 'TokyoNight (Gogh)',
+  -- https://wezfurlong.org/wezterm/colorschemes/index.html
+  color_scheme = 'Popping and Locking',
   cursor_thickness = '2px',
   debug_key_events = false,
   default_cursor_style = 'SteadyBlock',

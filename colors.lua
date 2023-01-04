@@ -5,10 +5,5 @@ return {
     -- holding input pending the result of input composition, change the cursor
     -- to this color to give a visual cue about the compose state.
     compose_cursor = 'orange',
-
-    tab_bar = {
-      inactive_tab_edge = '#575757',
-      inactive_tab_background = 'blue',
-    },
   },
 }
