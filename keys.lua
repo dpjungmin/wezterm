@@ -25,7 +25,7 @@ return {
 
     -- custom event
     { key = 'E', mods = 'CTRL', action = action.EmitEvent 'trigger-vim-with-visible-text' },
-    { key = 'B', mods = 'CTRL', action = action.EmitEvent 'my-custom-event' },
+    { key = 'B', mods = 'CTRL', action = action.EmitEvent 'toggle-font-size' },
 
     -- open custom links
     {

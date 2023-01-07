@@ -59,8 +59,8 @@ local config = {
   window_frame = {
     font = wezterm.font { family = 'Roboto', weight = 'Bold' },
     font_size = window_frame_font_size,
-    active_titlebar_bg = 'transparent',
-    inactive_titlebar_bg = 'transparent',
+    -- active_titlebar_bg = 'transparent',
+    -- inactive_titlebar_bg = 'transparent',
   },
   window_padding = {
     left = '1cell',

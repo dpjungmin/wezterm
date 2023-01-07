@@ -100,10 +100,29 @@ end)
 
 -- Custom events
 
-wezterm.on('my-custom-event', function(window, pane)
-  wezterm.log_info('hostname: ' .. wezterm.hostname())
-  wezterm.log_info('target-triple: ' .. wezterm.target_triple)
-  wezterm.log_info('version: ' .. wezterm.version)
+wezterm.on('toggle-font-size', function(window, pane)
+  local o = window:get_config_overrides() or {}
+
+  if not o.font_size then
+    o = {
+      font_size = 20.0,
+      window_frame = {
+        font = wezterm.font { family = 'Roboto', weight = 'Bold' },
+        font_size = 12.0,
+      },
+    }
+  end
+
+  if o.font_size == 20.0 then
+    o.font_size = 25.0
+    o.window_frame.font_size = 15.0
+  elseif o.font_size == 25.0 then
+    o.font_size = 20.0
+    o.window_frame.font_size = 12.0
+  end
+
+  window:set_config_overrides(o)
+  wezterm.log_info('overriding config: ', o)
 end)
 
 wezterm.on('trigger-vim-with-visible-text', function(window, pane)
