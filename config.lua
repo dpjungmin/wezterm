@@ -20,8 +20,8 @@ local config = {
   check_for_updates_interval_seconds = 86400, -- 24 hours
   clean_exit_codes = { 130 },
   -- https://wezfurlong.org/wezterm/colorschemes/index.html
-  -- 'GruvboxDark (Gogh)' | 'Earthsong' | 'Tomorrow Night Burns' | 'Blue Matrix'
-  color_scheme = 'Blue Matrix', 
+  -- 'Hybrid' | 'Tomorrow Night Burns'
+  color_scheme = 'Hybrid',
   cursor_thickness = '2px',
   debug_key_events = false,
   default_cursor_style = 'SteadyBlock',
