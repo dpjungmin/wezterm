@@ -8,23 +8,23 @@ selection_bg = "#1e1f22"
 selection_fg = "#b7bcba"
 
 ansi = [
-  "#2a2e33",
-  "#b84d51",
-  "#b3bf5a",
-  "#e4b55e",
-  "#6e90b0",
-  "#a17eac",
-  "#7fbfb4",
-  "#b5b9b6"
+  "#2a2e33", # BLACK
+  "#b84d51", # DARK-RED
+  "#b3bf5a", # DARK-GREEN
+  "#e4b55e", # DARK-YELLOW
+  "#6e90b0", # DARK-BLUE
+  "#a17eac", # DARK-MAGENTA
+  "#7fbfb4", # DARK-CYAN
+  "#b5b9b6"  # DARK-WHITE
 ]
 
 brights = [
-  "#1d1f22",
-  "#8d2e32",
-  "#798431",
-  "#e58a50",
-  "#4b6b88",
-  "#6e5079",
-  "#4d7b74",
-  "#5a626a"
+  "#1d1f22", # BRIGHT-BLACK
+  "#8d2e32", # BRIGHT-RED
+  "#798431", # BRIGHT-GREEN
+  "#e58a50", # BRIGHT-YELLOW
+  "#4b6b88", # BRIGHT-BLUE
+  "#6e5079", # BRIGHT-MAGENTA
+  "#4d7b74", # BRIGHT-CYAN
+  "#5a626a"  # WHITE
 ]
