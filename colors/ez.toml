@@ -1,11 +1,15 @@
 [colors]
 foreground = "#b7bcba"
 background = "#161719"
-cursor_bg = "#b7bcba"
-cursor_border = "#b7bcba"
-cursor_fg = "#1e1f22"
-selection_bg = "#1e1f22"
-selection_fg = "#b7bcba"
+
+cursor_fg = "#000000"
+cursor_bg = "#00ff00"
+cursor_border = "#ff0000"
+
+selection_fg = "None"
+selection_bg = "#434846"
+
+split = "#444c56"
 
 ansi = [
   "#2a2e33", # BLACK
@@ -28,3 +32,5 @@ brights = [
   "#4d7b74", # BRIGHT-CYAN
   "#5a626a"  # WHITE
 ]
+
+compose_cursor = "orange"
