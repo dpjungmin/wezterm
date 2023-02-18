@@ -1,0 +1,36 @@
+[colors]
+foreground = "#000000"
+background = "#ffffff"
+
+cursor_fg = "#ffffff"
+cursor_bg = "#00ff00"
+cursor_border = "#ff0000"
+
+selection_fg = "None"
+selection_bg = "#c1deff"
+
+split = "#e6ebe1"
+
+ansi = [
+  "#000000", # DARK-BLACK
+  "#ff0000", # DARK-RED
+  "#59d600", # DARK-GREEN
+  "#f0cb00", # DARK-YELLOW
+  "#00a2ff", # DARK-BLUE
+  "#c17ecc", # DARK-MAGENTA
+  "#00d0d6", # DARK-CYAN
+  "#e6ebe1"  # DARK-WHITE
+]
+
+brights = [
+  "#8f928b", # BRIGHT-BLACK
+  "#ff0013", # BRIGHT-RED
+  "#93ff00", # BRIGHT-GREEN
+  "#e58a50", # BRIGHT-YELLOW
+  "#88c9ff", # BRIGHT-BLUE
+  "#e9a7e1", # BRIGHT-MAGENTA
+  "#00feff", # BRIGHT-CYAN
+  "#434846"  # BRIGHT-WHITE
+]
+
+compose_cursor = "orange"

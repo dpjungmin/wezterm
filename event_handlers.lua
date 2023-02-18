@@ -77,17 +77,15 @@ end)
 
 wezterm.on('update-status', function(window, pane)
   local meta = pane:get_metadata() or {}
-  local overrides = window:get_config_overrides() or {}
-
-  wezterm.log_info(overrides)
+  local o = window:get_config_overrides() or {}
 
   if meta.password_input then
-    overrides.color_scheme = 'Red Alert'
+    o.color_scheme = 'Red Alert'
   else
-    overrides.color_scheme = nil
+    o.color_scheme = nil
   end
 
-  window:set_config_overrides(overrides)
+  window:set_config_overrides(o)
 end)
 
 wezterm.on('window-config-reloaded', function(window, pane)
@@ -100,29 +98,16 @@ end)
 
 -- Custom events
 
-wezterm.on('toggle-font-size', function(window, pane)
+wezterm.on('toggle-opacity', function(window, pane)
   local o = window:get_config_overrides() or {}
 
-  if not o.font_size then
-    o = {
-      font_size = 20.0,
-      window_frame = {
-        font = wezterm.font { family = 'Roboto', weight = 'Bold' },
-        font_size = 12.0,
-      },
-    }
-  end
-
-  if o.font_size == 20.0 then
-    o.font_size = 25.0
-    o.window_frame.font_size = 15.0
-  elseif o.font_size == 25.0 then
-    o.font_size = 20.0
-    o.window_frame.font_size = 12.0
+  if not o.window_background_opacity then
+    o.window_background_opacity = 0.7
+  else
+    o.window_background_opacity = nil
   end
 
   window:set_config_overrides(o)
-  wezterm.log_info('overriding config: ', o)
 end)
 
 wezterm.on('trigger-vim-with-visible-text', function(window, pane)

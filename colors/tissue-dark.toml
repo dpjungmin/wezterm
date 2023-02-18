@@ -12,7 +12,7 @@ selection_bg = "#434846"
 split = "#444c56"
 
 ansi = [
-  "#2a2e33", # BLACK
+  "#2a2e33", # DARK-BLACK
   "#b84d51", # DARK-RED
   "#b3bf5a", # DARK-GREEN
   "#e4b55e", # DARK-YELLOW
@@ -30,7 +30,7 @@ brights = [
   "#4b6b88", # BRIGHT-BLUE
   "#6e5079", # BRIGHT-MAGENTA
   "#4d7b74", # BRIGHT-CYAN
-  "#5a626a"  # WHITE
+  "#5a626a"  # BRIGHT-WHITE
 ]
 
 compose_cursor = "orange"
