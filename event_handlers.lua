@@ -89,7 +89,7 @@ wezterm.on('update-status', function(window, pane)
 end)
 
 wezterm.on('window-config-reloaded', function(window, pane)
-  window:toast_notification('wezterm', 'configuration reloaded!', nil, 4000)
+  -- window:toast_notification('wezterm', 'configuration reloaded!', nil, 4000)
 end)
 
 wezterm.on('window-resized', function(window, pane)
@@ -107,10 +107,11 @@ wezterm.on('toggle-opacity', function(window, pane)
     o.window_background_opacity = nil
   end
 
+  window:toast_notification('wezterm', 'event: toggle-opacity', nil, 4000)
   window:set_config_overrides(o)
 end)
 
-wezterm.on('trigger-vim-with-visible-text', function(window, pane)
+wezterm.on('trigger-nvim-with-text', function(window, pane)
   local io = require 'io'
   local os = require 'os'
 
@@ -128,9 +129,11 @@ wezterm.on('trigger-vim-with-visible-text', function(window, pane)
   f:flush()
   f:close()
 
+  window:toast_notification('wezterm', 'event: trigger-nvim-with-text', nil, 4000)
+
   window:perform_action(
     action.SpawnCommandInNewWindow {
-      args = { 'vim', name },
+      args = { 'nvim', name },
     },
     pane
   )

@@ -24,7 +24,7 @@ return {
     },
 
     -- custom event
-    { key = 'E', mods = 'CTRL', action = action.EmitEvent 'trigger-vim-with-visible-text' },
+    { key = 'E', mods = 'CTRL', action = action.EmitEvent 'trigger-nvim-with-text' },
     { key = 'B', mods = 'CTRL', action = action.EmitEvent 'toggle-opacity' },
 
     -- open custom links
