@@ -21,7 +21,11 @@ wezterm.on('gui-startup', function(cmd)
 end)
 
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
-  local title = ' ' .. basename(tab.active_pane.foreground_process_name) .. ' '
+  local title = ' '
+    .. basename(tab.active_pane.foreground_process_name)
+    .. ' <'
+    .. (tab.tab_index + 1)
+    .. '> '
 
   if tab.is_active then
     return {
@@ -40,8 +44,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
 
   if has_unseen_output then
     return {
-      -- { Background = { Color = '' } },
-      { Foreground = { Color = 'yellow' } },
+      { Foreground = { Color = '#e4b55e' } },
       { Text = title },
     }
   end
