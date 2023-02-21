@@ -23,9 +23,9 @@ end)
 wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
   local title = ' '
     .. basename(tab.active_pane.foreground_process_name)
-    .. ' <'
+    .. ' ['
     .. (tab.tab_index + 1)
-    .. '> '
+    .. '] '
 
   if tab.is_active then
     return {

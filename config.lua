@@ -3,14 +3,6 @@ local fonts = require 'fonts'
 local key_tables = require 'key_tables'
 local keys = require 'keys'
 local mouse_bindings = require 'mouse_bindings'
-local wezterm = require 'wezterm'
-
-local hostname = wezterm.hostname()
-local window_frame_font_size = 12.0
-
-if hostname == 'hz' then
-  window_frame_font_size = 15.0
-end
 
 local config = {
   adjust_window_size_when_changing_font_size = true,
@@ -28,7 +20,7 @@ local config = {
   enable_scroll_bar = false,
   enable_tab_bar = true,
   enable_wayland = true,
-  hide_tab_bar_if_only_one_tab = false,
+  hide_tab_bar_if_only_one_tab = true,
   inactive_pane_hsb = {
     saturation = 0.9,
     brightness = 0.8,
@@ -58,12 +50,6 @@ local config = {
   underline_thickness = '2px',
   use_fancy_tab_bar = true,
   window_background_opacity = 1.0,
-  window_frame = {
-    font = wezterm.font { family = 'Roboto', weight = 'Bold' },
-    font_size = window_frame_font_size,
-    -- active_titlebar_bg = 'transparent',
-    -- inactive_titlebar_bg = 'transparent',
-  },
   window_padding = {
     left = '1cell',
     right = '1cell',
