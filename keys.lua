@@ -60,7 +60,7 @@ return {
     { key = 'Tab', mods = 'META|SHIFT', action = action.ActivateTabRelative(-1) },
     { key = 'N', mods = 'META', action = action.RotatePanes 'CounterClockwise' },
     { key = 'n', mods = 'META', action = action.RotatePanes 'Clockwise' },
-    { key = 'f', mods = 'META', action = action.ToggleFullScreen },
+    { key = 'f', mods = 'META|SHIFT', action = action.ToggleFullScreen },
     { key = 'l', mods = 'META', action = action.ShowLauncher },
 
     { key = '/', mods = 'CTRL', action = action.ShowDebugOverlay },
