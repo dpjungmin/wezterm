@@ -147,3 +147,25 @@ wezterm.on('trigger-nvim-with-text', function(window, pane)
   wezterm.sleep_ms(1000)
   os.remove(name)
 end)
+
+wezterm.on('setup-work-env', function(window, pane)
+  local o = window:get_config_overrides() or {}
+
+  window:toast_notification('wezterm', 'event: setup-work-env', nil, 4000)
+  window:set_config_overrides(o)
+
+  local tab1, pane1, window = mux.spawn_window {
+    workspace = 'work',
+    cwd = wezterm.home_dir,
+    args = args,
+  }
+  local tab2, pane2, window = window:spawn_tab {}
+  local tab2, pane3, window = window:spawn_tab {}
+
+  pane1:send_text 'connect\n'
+  pane2:send_text 'connect\n'
+  pane3:send_text 'connect\n'
+
+  tab1:activate()
+  mux.set_active_workspace 'work'
+end)

@@ -3,6 +3,7 @@ local fonts = require 'fonts'
 local key_tables = require 'key_tables'
 local keys = require 'keys'
 local mouse_bindings = require 'mouse_bindings'
+local ssh_domains = require 'ssh_domains'
 
 local config = {
   adjust_window_size_when_changing_font_size = true,
@@ -71,4 +72,4 @@ local function merge_tables(...)
   return table
 end
 
-return merge_tables(config, colors, fonts, key_tables, keys, mouse_bindings)
+return merge_tables(config, colors, fonts, key_tables, keys, mouse_bindings, ssh_domains)

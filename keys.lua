@@ -26,6 +26,7 @@ return {
     -- custom event
     { key = 'E', mods = 'CTRL', action = action.EmitEvent 'trigger-nvim-with-text' },
     { key = 'B', mods = 'CTRL', action = action.EmitEvent 'toggle-opacity' },
+    { key = 'w', mods = 'LEADER', action = action.EmitEvent 'setup-work-env' },
 
     -- open custom links
     {
@@ -86,14 +87,7 @@ return {
       key = '2',
       mods = 'CTRL',
       action = action.SwitchToWorkspace {
-        name = 'dev',
-      },
-    },
-    {
-      key = '3',
-      mods = 'CTRL',
-      action = action.SwitchToWorkspace {
-        name = 'monit',
+        name = 'work',
       },
     },
 
